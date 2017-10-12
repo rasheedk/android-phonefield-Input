@@ -1,4 +1,4 @@
-#android-phonefield-Input
+# android-phonefield-Input
 
 android-phone-field is A small UI library that allows you to create phone fields with corresponding country flags, and validate the phone number using libphonenumber from google.
 
@@ -7,13 +7,13 @@ android-phone-field is A small UI library that allows you to create phone fields
 
 #The library has two different fields:
 
-#PhoneEditText : 
+# PhoneEditText : 
 
 includes EditText alongside the flags spinner
 #PhoneInputLayout : 
 includes a TextInputLayout from the design support library alongside the flags spinner
 
-#Features
+# Features
 
 Displays the correct country flag if the user enters a valid international phone number
 Allows the user to choose the country manually and only enter a national phone number
@@ -23,25 +23,31 @@ Allows you to choose a default country, which the field will change to automatic
 Returns the valid phone number including the country code
 
 
-#Usage
+# Usage
 
-#1. Add this library project as module in Android Studio.
+# 1. Add this library project as module in Android Studio.
 -So your app will be having module dependancy of this Lib.
 
 Now lets get started:
 
-#2.In your layout you can use the PhoneInputLayout
-
+# 2.In your layout you can use the PhoneInputLayout
+<code>
 <com.lamudi.phonefield.PhoneInputLayout
      android:id="@+id/phone_input_layout"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"/>
+     
+ </code>    
 or the PhoneEditText
+
+<code>
 
  <com.lamudi.phonefield.PhoneEditText
      android:id="@+id/edit_text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"/>
+     
+     </code>
 #3.Then in your Activity/Fragment
 
 <code>
@@ -92,13 +98,13 @@ button.setOnClickListener(new View.OnClickListener() {
 
 </code>
  
-#Customization
+# Customization
 
 In case the default style doesn't match your app styles, you can extend the PhoneInputLayout, or PhoneEditText and provide your own xml, but keep in mind that you have to provide a valid xml file with at least an EditText (tag = com_lamudi_phonefield_edittext) and Spinner (tag = com_lamudi_phonefield_flag_spinner), otherwise the library will throw an IllegalStateException.
 
 You can also create your own custom view by extending the PhoneField directly.
 
-#Countries generation
+# Countries generation
 
 For better performance and to avoid using json data and then parse it to be used in the library, a simple nodejs is used to convert the countries.json file in raw/countries-generator/ into a plain java utility class that has static list of countries.
 
@@ -110,7 +116,7 @@ or
 
 ./gen.js
 
-#Motivation
+# Motivation
 
 This is probably not the the first library with the same purpose, for instance before I started working on the library I came across IntlPhoneInput which provides almost most of the functionality this library provides, however I chose to develop a new library for the following reasons:
 
@@ -118,22 +124,27 @@ This library provides two implementations of PhoneField using EditText and TextI
 This library allows users to extend the functionality and use custom layouts if needed to match the application theme
 This library uses a static list of countries generated from the countries.json file in the raw resources
 
-#Attributions
+# Attributions
 
 Inspired by intl-tel-input for jQuery and IntlPhoneInput
 Flag images from flags
 Original country data from mledoze's World countries in JSON, CSV and XML which is then used to generate a plain Java file
 Formatting/validation using libphonenumber
 
-#Note:
+# Note:
 If you find newly issued mobile numbers not validated as mobile number for any country you can add supporting them by using latest dependancy of 
 
-<code> compile 'com.googlecode.libphonenumber:libphonenumber:X.X.X'  </code>
+<code> compile 'com.googlecode.libphonenumber:libphonenumber:X.X.X'  </code></br></br>
 in your android-phonefield-Input gradle.
 So that this library will support latest issued numbers.
 
-Example senario:
-com.googlecode.libphonenumber:libphonenumber:7.X.X  versions , JIO numbers starting with 89XXX XXXXX was not a mobile number in India.
+# Example senario:
+For library whis is using com.googlecode.libphonenumber:libphonenumber:7.X.X  versions ,
+JIO numbers starting with 89XXX XXXXX was not a mobile number in India.
+
 but when i migrated to com.googlecode.libphonenumber:libphonenumber:8.X.X  support was there.
 
 You can check latest <a href="https://github.com/googlei18n/libphonenumber">Here</a>
+
+# If you liked this Project, Please <a href="https://github.com/googlei18n/libphonenumber">Follow me</a>...
+
