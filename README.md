@@ -7,10 +7,10 @@ android-phone-field is A small UI library that allows you to create phone fields
 
 #The library has two different fields:
 
-# PhoneEditText : 
-
+# 1.PhoneEditText : 
 includes EditText alongside the flags spinner
-#PhoneInputLayout : 
+
+# 2.PhoneInputLayout : 
 includes a TextInputLayout from the design support library alongside the flags spinner
 
 # Features
@@ -48,21 +48,22 @@ or the PhoneEditText
      android:layout_height="wrap_content"/>
      
      </code>
-#3.Then in your Activity/Fragment
+# 3.Then in your Activity/Fragment
 
 <code>
 final PhoneInputLayout phoneInputLayout = (PhoneInputLayout) findViewById(R.id.phone_input_layout);
 final PhoneEditText phoneEditText = (PhoneEditText) findViewById(R.id.edit_text);
 final Button button = (Button) findViewById(R.id.submit_button);
-
+ </code>
 // you can set the hint as follows
+ <code>
 phoneInputLayout.setHint(R.string.phone_hint);
 phoneEditText.setHint(R.string.phone_hint);
-
+ </code>
 // you can set the default country as follows
+ <code>
 phoneInputLayout.setDefaultCountry("DE");
 phoneEditText.setDefaultCountry("FR");
-
 button.setOnClickListener(new View.OnClickListener() {
   @Override
   public void onClick(View v) {
@@ -94,8 +95,6 @@ button.setOnClickListener(new View.OnClickListener() {
     String phoneNumber = phoneInputLayout.getPhoneNumber();
   }
 });
-
-
 </code>
  
 # Customization
@@ -134,17 +133,19 @@ Formatting/validation using libphonenumber
 # Note:
 If you find newly issued mobile numbers not validated as mobile number for any country you can add supporting them by using latest dependancy of 
 
-<code> compile 'com.googlecode.libphonenumber:libphonenumber:X.X.X'  </code></br></br>
+<code> compile 'com.googlecode.libphonenumber:libphonenumber:X.X.X'  </code>
+
+
 in your android-phonefield-Input gradle.
 So that this library will support latest issued numbers.
 
 # Example senario:
+
 For library whis is using com.googlecode.libphonenumber:libphonenumber:7.X.X  versions ,
 JIO numbers starting with 89XXX XXXXX was not a mobile number in India.
-
 but when i migrated to com.googlecode.libphonenumber:libphonenumber:8.X.X  support was there.
 
 You can check latest <a href="https://github.com/googlei18n/libphonenumber">Here</a>
 
-# If you liked this Project, Please <a href="https://github.com/googlei18n/libphonenumber">Follow me</a>...
+# If you liked this Project, Please <a href="https://rasheedk.github.io">Follow me</a>...
 
