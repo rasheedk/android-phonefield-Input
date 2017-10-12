@@ -32,36 +32,44 @@ Now lets get started:
 
 # 2.In your layout you can use the PhoneInputLayout
 
-<code>
+```
 <com.lamudi.phonefield.PhoneInputLayout
      android:id="@+id/phone_input_layout"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"/>
-     
+  ```
+   
    
 //or the PhoneEditText
+```
 
  <com.lamudi.phonefield.PhoneEditText
      android:id="@+id/edit_text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"/>
      
-     </code>
+```
+
      
 # 3.Then in your Activity/Fragment
 
-<code>
+```
+
      
 final PhoneInputLayout phoneInputLayout = (PhoneInputLayout) findViewById(R.id.phone_input_layout);
 final PhoneEditText phoneEditText = (PhoneEditText) findViewById(R.id.edit_text);
 final Button button = (Button) findViewById(R.id.submit_button);
+```
 
 // you can set the hint as follows
+```
 
 phoneInputLayout.setHint(R.string.phone_hint);
 phoneEditText.setHint(R.string.phone_hint);
+```
 
 // you can set the default country as follows
+```
 
 phoneInputLayout.setDefaultCountry("DE");
 phoneEditText.setDefaultCountry("FR");
@@ -98,7 +106,8 @@ button.setOnClickListener(new View.OnClickListener() {
   
 });
 
-</code>
+```
+
  
 # Customization
 
